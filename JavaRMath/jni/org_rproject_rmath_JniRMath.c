@@ -72,11 +72,14 @@ JNIEXPORT void JNICALL Java_org_rproject_rmath_JniRMath_set_1seed
  * Signature: ()[I
  */
 JNIEXPORT jintArray JNICALL Java_org_rproject_rmath_JniRMath_get_1seed
-  (JNIEnv * oJNIEnv, jclass jc);
+  (JNIEnv * oJNIEnv, jclass jc)
 {
-	unsigned int * result = (unsigned int*) calloc(2, sizeof(unsigned int));
-	get_seed(&result[0], &result[1]);
-	return (jintArray) ((int*) result);
+    jintArray jResult = (*oJNIEnv)->NewIntArray(oJNIEnv, 2);
+    jint * jResult_pinned = (*oJNIEnv)->GetIntArrayElements(oJNIEnv, jResult, 0);
+    get_seed((unsigned int *)(&(jResult_pinned[0])), (unsigned int *)(&(jResult_pinned[1])));
+    //(*oJNIEnv)->SetIntArrayRegion(oJNIEnv, jResult, 0, 2, (jint*) result);
+    (*oJNIEnv)->ReleaseIntArrayElements(oJNIEnv, jResult, jResult_pinned, 0);
+    return jResult;
 }
 
 DMACRO(dunif, min, max)
@@ -99,10 +102,10 @@ PMACRO_1(pchisq, df)
 QMACRO_1(qchisq, df)
 RMACRO_1(rchisq, df)
 
-DMACRO(dchisq, df, ncp)
-PMACRO(pchisq, df, ncp)
-QMACRO(qchisq, df, ncp)
-RMACRO(rchisq, df, ncp)
+DMACRO(dnchisq, df, ncp)
+PMACRO(pnchisq, df, ncp)
+QMACRO(qnchisq, df, ncp)
+RMACRO(rnchisq, df, ncp)
 
 DMACRO(df, df1, df2)
 PMACRO(pf, df1, df2)
@@ -127,7 +130,14 @@ RMACRO(rbinom, size, prob)
 JNIEXPORT void JNICALL Java_org_rproject_rmath_JniRMath_rmultinom
   (JNIEnv * oJNIEnv, jclass jc, jint n, jdoubleArray prob, jint k, jintArray rN)
 {
-	rmultinom((int) n, (double *) prob, (int) k, (int *) rN);
+    /* pin the Java arrays and create a pointer to them */
+    jdouble * jProb = (*oJNIEnv)->GetDoubleArrayElements(oJNIEnv, prob, 0);
+    jint * jRN = (*oJNIEnv)->GetIntArrayElements(oJNIEnv, rN, 0);
+    /* call rmultinom */
+    rmultinom((int) n, (double *) jProb, (int) k, (int*) jRN);
+    /* release the pinned Java arrays */
+    (*oJNIEnv)->ReleaseDoubleArrayElements(oJNIEnv, prob, jProb, 0);
+    (*oJNIEnv)->ReleaseIntArrayElements(oJNIEnv, rN, jRN, 0);
 }
 
 DMACRO(dcauchy, location, scale)
@@ -155,10 +165,10 @@ PMACRO(pnbinom, size, prob)
 QMACRO(qnbinom, size, prob)
 RMACRO(rnbinom, size, prob)
 
-DMACRO(dnbinom_mu, size, mu)
-PMACRO(pnbinom_mu, size, mu)
-QMACRO(qnbinom_mu, size, mu)
-RMACRO(rnbinom_mu, size, mu)
+DMACRO_B(dnbinom_1mu, dnbinom_mu, size, mu)
+PMACRO_B(pnbinom_1mu, pnbinom_mu, size, mu)
+QMACRO_B(qnbinom_1mu, qnbinom_mu, size, mu)
+RMACRO_B(rnbinom_1mu, rnbinom_mu, size, mu)
 
 DMACRO_1(dpois, lambda)
 PMACRO_1(ppois, lambda)
@@ -178,12 +188,11 @@ RMACRO(rlogis, location, scale)
 DMACRO_3(dnbeta, shape1, shape2, ncp)
 PMACRO_3(pnbeta, shape1, shape2, ncp)
 QMACRO_3(qnbeta, shape1, shape2, ncp)
-RMACRO_3(rnbeta, shape1, shape2, ncp)
+/*RMACRO_3(rnbeta, shape1, shape2, ncp)*/
 
 DMACRO_3(dnf, df1, df2, ncp)
 PMACRO_3(pnf, df1, df2, ncp)
 QMACRO_3(qnf, df1, df2, ncp)
-RMACRO_3(rnf, df1, df2, ncp)
 
 DMACRO(dnt, df, ncp)
 PMACRO(pnt, df, ncp)
@@ -211,9 +220,8 @@ FUNCTIONMACRO_2(beta, a, b)
 FUNCTIONMACRO_2(lbeta, a, b)
 FUNCTIONMACRO_2(choose, n, k)
 FUNCTIONMACRO_2(lchoose, n, k)
-FUNCTIONMACRO_2(besseli, n, k)
 
-FUNCTIONMACRO_3(bessel_i, x, nu, expon_scaled)
-FUNCTIONMACRO_2(bessel_j, x, nu)
-FUNCTIONMACRO_3(bessel_k, x, nu, expon_scaled)
-FUNCTIONMACRO_2(bessel_y, x, nu)
+FUNCTIONMACRO_3(bessel_1i, bessel_i, x, nu, expon_scaled)
+FUNCTIONMACRO_2B(bessel_1j, bessel_j, x, nu)
+FUNCTIONMACRO_3(bessel_1k, bessel_k, x, nu, expon_scaled)
+FUNCTIONMACRO_2B(bessel_1y, bessel_y, x, nu)

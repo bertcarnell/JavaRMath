@@ -1057,6 +1057,6 @@ public class JniRMath {
     public static native double bessel_y(double x, double nu);
 
     static {
-        System.loadLibrary("Rmath64");
+        System.loadLibrary("RmathJni");
     }
 }

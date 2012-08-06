@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.rproject.rmath;
 
 import com.sun.jna.ptr.IntByReference;
@@ -34,35 +30,35 @@ public class JnaRMathTest {
     }
 
     /**
-     * Test of dnorm4 method, of class JnaRMath.
+     * Test of dnorm method, of class JnaRMath.
      */
     @Test
-    public void testDnorm4() {
-        System.out.println("dnorm4");
+    public void testDnorm() {
+        System.out.println("dnorm");
         double expResult = 1.0 / Math.sqrt(2 * Math.PI);
-        double result = JnaRMath.dnorm4(0.0, 0.0, 1.0, 0);
+        double result = JnaRMath.dnorm(0.0, 0.0, 1.0, 0);
         assertEquals(expResult, result, 1E-6);
     }
-
+    
     /**
-     * Test of pnorm5 method, of class JnaRMath.
+     * Test of pnorm method, of class JnaRMath.
      */
     @Test
-    public void testPnorm5() {
-        System.out.println("pnorm5");
+    public void testPnorm() {
+        System.out.println("pnorm");
         double expResult = 0.5;
-        double result = JnaRMath.pnorm5(0.0, 0.0, 1.0, 1, 0);
+        double result = JnaRMath.pnorm(0.0, 0.0, 1.0, 1, 0);
         assertEquals(expResult, result, 1E-6);
     }
 
     /**
-     * Test of qnorm5 method, of class JnaRMath.
+     * Test of qnorm method, of class JnaRMath.
      */
     @Test
-    public void testQnorm5() {
-        System.out.println("qnorm5");
+    public void testQnorm() {
+        System.out.println("qnorm");
         double expResult = 0.0;
-        double result = JnaRMath.qnorm5(0.5, 0.0, 1.0, 1, 0);
+        double result = JnaRMath.qnorm(0.5, 0.0, 1.0, 1, 0);
         assertEquals(expResult, result, 0.0);
     }
 
@@ -395,15 +391,8 @@ public class JnaRMathTest {
     @Test
     public void testDf() {
         System.out.println("df");
-        double x = 0.0;
-        double df1 = 0.0;
-        double df2 = 0.0;
-        int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.df(x, df1, df2, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.df(2.0, 2.0, 3.0, 0);
+        assertEquals(0.1202425, result, 1E7);
     }
 
     /**
@@ -412,16 +401,10 @@ public class JnaRMathTest {
     @Test
     public void testPf() {
         System.out.println("pf");
-        double q = 0.0;
-        double df1 = 0.0;
-        double df2 = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pf(q, df1, df2, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.pf(2.0, 2.0, 3.0, lower_tail, log_p);
+        assertEquals(0.7194341, result, 1E-7);
     }
 
     /**
@@ -430,16 +413,10 @@ public class JnaRMathTest {
     @Test
     public void testQf() {
         System.out.println("qf");
-        double p = 0.0;
-        double df1 = 0.0;
-        double df2 = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qf(p, df1, df2, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qf(0.5, 2.0, 3.0, lower_tail, log_p);
+        assertEquals(0.8811016, result, 1E-7);
     }
 
     /**
@@ -448,13 +425,8 @@ public class JnaRMathTest {
     @Test
     public void testRf() {
         System.out.println("rf");
-        double df1 = 0.0;
-        double df2 = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rf(df1, df2);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rf(2.0, 3.0);
+        assertTrue(result > 0 && result < Double.MAX_VALUE);
     }
 
     /**
@@ -463,14 +435,9 @@ public class JnaRMathTest {
     @Test
     public void testDt() {
         System.out.println("dt");
-        double x = 0.0;
-        double df = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dt(x, df, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dt(2.0, 3.0, log);
+        assertEquals(0.06750966, result, 1E-7);
     }
 
     /**
@@ -479,15 +446,10 @@ public class JnaRMathTest {
     @Test
     public void testPt() {
         System.out.println("pt");
-        double q = 0.0;
-        double df = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pt(q, df, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.pt(2.0, 3.0, lower_tail, log_p);
+        assertEquals(0.930337, result, 1E-7);
     }
 
     /**
@@ -496,15 +458,10 @@ public class JnaRMathTest {
     @Test
     public void testQt() {
         System.out.println("qt");
-        double p = 0.0;
-        double df = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qt(p, df, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qt(0.9, 3.0, lower_tail, log_p);
+        assertEquals(1.637744, result, 1E-6);
     }
 
     /**
@@ -513,12 +470,8 @@ public class JnaRMathTest {
     @Test
     public void testRt() {
         System.out.println("rt");
-        double df = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rt(df);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rt(3.0);
+        assertTrue(result > Double.NEGATIVE_INFINITY && result < Double.POSITIVE_INFINITY);
     }
 
     /**
@@ -527,15 +480,9 @@ public class JnaRMathTest {
     @Test
     public void testDbinom() {
         System.out.println("dbinom");
-        double x = 0.0;
-        double size = 0.0;
-        double prob = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dbinom(x, size, prob, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dbinom(3.0, 10.0, 0.6, log);
+        assertEquals(0.04246733, result, 1E-8);
     }
 
     /**
@@ -544,16 +491,10 @@ public class JnaRMathTest {
     @Test
     public void testPbinom() {
         System.out.println("pbinom");
-        double q = 0.0;
-        double size = 0.0;
-        double prob = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pbinom(q, size, prob, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.pbinom(3.0, 10.0, 0.6, lower_tail, log_p);
+        assertEquals(0.05476188, result, 1E-7);
     }
 
     /**
@@ -562,16 +503,10 @@ public class JnaRMathTest {
     @Test
     public void testQbinom() {
         System.out.println("qbinom");
-        double p = 0.0;
-        double size = 0.0;
-        double prob = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qbinom(p, size, prob, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qbinom(0.5, 10.0, 0.6, lower_tail, log_p);
+        assertEquals(6.0, result, 1E-12);
     }
 
     /**
@@ -580,13 +515,8 @@ public class JnaRMathTest {
     @Test
     public void testRbinom() {
         System.out.println("rbinom");
-        double size = 0.0;
-        double prob = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rbinom(size, prob);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rbinom(10.0, 0.6);
+        assertTrue(result >= 0.0 && result <= 10.0);
     }
 
     /**
@@ -617,15 +547,9 @@ public class JnaRMathTest {
     @Test
     public void testDcauchy() {
         System.out.println("dcauchy");
-        double x = 0.0;
-        double location = 0.0;
-        double scale = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dcauchy(x, location, scale, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dcauchy(0.0, 1.0, 2.0, log);
+        assertEquals(0.127324, result, 1E-6);
     }
 
     /**
@@ -634,16 +558,10 @@ public class JnaRMathTest {
     @Test
     public void testPcauchy() {
         System.out.println("pcauchy");
-        double q = 0.0;
-        double location = 0.0;
-        double scale = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pcauchy(q, location, scale, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.pcauchy(0.0, 1.0, 2.0, lower_tail, log_p);
+        assertEquals(0.3524164, result, 1E-7);
     }
 
     /**
@@ -652,16 +570,10 @@ public class JnaRMathTest {
     @Test
     public void testQcauchy() {
         System.out.println("qcauchy");
-        double p = 0.0;
-        double location = 0.0;
-        double scale = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qcauchy(p, location, scale, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qcauchy(0.6, 1.0, 2.0, lower_tail, log_p);
+        assertEquals(1.649839, result, 1E-6);
     }
 
     /**
@@ -670,13 +582,8 @@ public class JnaRMathTest {
     @Test
     public void testRcauchy() {
         System.out.println("rcauchy");
-        double location = 0.0;
-        double scale = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rcauchy(location, scale);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rcauchy(1.0, 2.0);
+        assertTrue(result > Double.NEGATIVE_INFINITY && result < Double.POSITIVE_INFINITY);
     }
 
     /**
@@ -685,14 +592,9 @@ public class JnaRMathTest {
     @Test
     public void testDexp() {
         System.out.println("dexp");
-        double x = 0.0;
-        double rate = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dexp(x, rate, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dexp(1.0, 0.5, log);
+        assertEquals(0.2706706, result, 1E-7);
     }
 
     /**
@@ -701,15 +603,10 @@ public class JnaRMathTest {
     @Test
     public void testPexp() {
         System.out.println("pexp");
-        double q = 0.0;
-        double rate = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pexp(q, rate, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.pexp(0.5, 0.5, lower_tail, log_p);
+        assertEquals(0.6321206, result, 1E-7);
     }
 
     /**
@@ -718,15 +615,10 @@ public class JnaRMathTest {
     @Test
     public void testQexp() {
         System.out.println("qexp");
-        double p = 0.0;
-        double rate = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qexp(p, rate, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qexp(0.5, 0.5, lower_tail, log_p);
+        assertEquals(0.3465736, result, 1E-7);
     }
 
     /**
@@ -735,12 +627,8 @@ public class JnaRMathTest {
     @Test
     public void testRexp() {
         System.out.println("rexp");
-        double rate = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rexp(rate);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rexp(2.0);
+        assertTrue(result > 0.0 && result < Double.MAX_VALUE);
     }
 
     /**
@@ -749,14 +637,9 @@ public class JnaRMathTest {
     @Test
     public void testDgeom() {
         System.out.println("dgeom");
-        double x = 0.0;
-        double prob = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dgeom(x, prob, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dgeom(1.0, 0.5, log);
+        assertEquals(0.25, result, 1E-12);
     }
 
     /**
@@ -765,15 +648,10 @@ public class JnaRMathTest {
     @Test
     public void testPgeom() {
         System.out.println("pgeom");
-        double q = 0.0;
-        double prob = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pgeom(q, prob, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.pgeom(1.0, 0.5, lower_tail, log_p);
+        assertEquals(0.75, result, 1E-12);
     }
 
     /**
@@ -782,15 +660,10 @@ public class JnaRMathTest {
     @Test
     public void testQgeom() {
         System.out.println("qgeom");
-        double p = 0.0;
-        double prob = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qgeom(p, prob, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qgeom(0.9, 0.6, lower_tail, log_p);
+        assertEquals(2.0, result, 1E-12);
     }
 
     /**
@@ -799,12 +672,8 @@ public class JnaRMathTest {
     @Test
     public void testRgeom() {
         System.out.println("rgeom");
-        double prob = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rgeom(prob);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rgeom(0.6);
+        assertTrue(result >= 0.0 && result < Double.MAX_VALUE);
     }
 
     /**
@@ -813,16 +682,9 @@ public class JnaRMathTest {
     @Test
     public void testDhyper() {
         System.out.println("dhyper");
-        double x = 0.0;
-        double m = 0.0;
-        double n = 0.0;
-        double k = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dhyper(x, m, n, k, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dhyper(3, 5, 20, 10, log);
+        assertEquals(0.2371542, result, 1e-7);
     }
 
     /**
@@ -831,17 +693,10 @@ public class JnaRMathTest {
     @Test
     public void testPhyper() {
         System.out.println("phyper");
-        double q = 0.0;
-        double m = 0.0;
-        double n = 0.0;
-        double k = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.phyper(q, m, n, k, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.phyper(3.0, 5.0, 20.0, 10.0, lower_tail, log_p);
+        assertEquals(0.9359684, result, 1E-7);
     }
 
     /**
@@ -850,17 +705,10 @@ public class JnaRMathTest {
     @Test
     public void testQhyper() {
         System.out.println("qhyper");
-        double p = 0.0;
-        double m = 0.0;
-        double n = 0.0;
-        double k = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qhyper(p, m, n, k, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       double result = JnaRMath.qhyper(0.5, 5.0, 20.0, 10.0, lower_tail, log_p);
+        assertEquals(2.0, result, 1E-12);
     }
 
     /**
@@ -872,11 +720,9 @@ public class JnaRMathTest {
         double m = 0.0;
         double n = 0.0;
         double k = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rhyper(m, n, k);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rhyper(m, n, k);
+        assertTrue(result >= 0 && result < Double.MAX_VALUE);
+        assertTrue(Math.abs(Math.floor(result) - result) < 1E-12);
     }
 
     /**
@@ -885,15 +731,9 @@ public class JnaRMathTest {
     @Test
     public void testDnbinom() {
         System.out.println("dnbinom");
-        double x = 0.0;
-        double size = 0.0;
-        double prob = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dnbinom(x, size, prob, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dnbinom(3.0, 10.0, 0.5, log);
+        assertEquals(0.02685547, result, 1E-7);
     }
 
     /**
@@ -902,16 +742,10 @@ public class JnaRMathTest {
     @Test
     public void testPnbinom() {
         System.out.println("pnbinom");
-        double q = 0.0;
-        double size = 0.0;
-        double prob = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pnbinom(q, size, prob, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.pnbinom(3.0, 10.0, 0.5, lower_tail, log_p);
+        assertEquals(0.04614258, result, 1E-7);
     }
 
     /**
@@ -920,16 +754,10 @@ public class JnaRMathTest {
     @Test
     public void testQnbinom() {
         System.out.println("qnbinom");
-        double p = 0.0;
-        double size = 0.0;
-        double prob = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qnbinom(p, size, prob, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qnbinom(0.5, 10.0, 0.5, lower_tail, log_p);
+        assertEquals(9.0, result, 1E-12);
     }
 
     /**
@@ -938,13 +766,9 @@ public class JnaRMathTest {
     @Test
     public void testRnbinom() {
         System.out.println("rnbinom");
-        double size = 0.0;
-        double prob = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rnbinom(size, prob);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rnbinom(10.0, 0.5);
+        assertTrue(result >= 0.0 && result < Double.MAX_VALUE);
+        assertTrue(Math.abs(Math.floor(result) - result) < 1E-12);
     }
 
     /**
@@ -953,15 +777,9 @@ public class JnaRMathTest {
     @Test
     public void testDnbinom_mu() {
         System.out.println("dnbinom_mu");
-        double x = 0.0;
-        double size = 0.0;
-        double mu = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dnbinom_mu(x, size, mu, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dnbinom_mu(3.0, 10.0, 1.0, log);
+        assertEquals(0.06372616, result, 1E-8);
     }
 
     /**
@@ -970,16 +788,10 @@ public class JnaRMathTest {
     @Test
     public void testPnbinom_mu() {
         System.out.println("pnbinom_mu");
-        double q = 0.0;
-        double size = 0.0;
-        double mu = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pnbinom_mu(q, size, mu, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.pnbinom_mu(3.0, 10.0, 1.0, lower_tail, log_p);
+        assertEquals(0.9750103, result, 1E-7);
     }
 
     /**
@@ -988,16 +800,10 @@ public class JnaRMathTest {
     @Test
     public void testQnbinom_mu() {
         System.out.println("qnbinom_mu");
-        double p = 0.0;
-        double size = 0.0;
-        double mu = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qnbinom_mu(p, size, mu, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qnbinom_mu(0.8, 10.0, 1.0, lower_tail, log_p);
+        assertEquals(2.0, result, 1E-12);
     }
 
     /**
@@ -1006,13 +812,8 @@ public class JnaRMathTest {
     @Test
     public void testRnbinom_mu() {
         System.out.println("rnbinom_mu");
-        double size = 0.0;
-        double mu = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rnbinom_mu(size, mu);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rnbinom_mu(10.0, 1.0);
+        assertTrue(result >= 0.0 && result < Double.MAX_VALUE);
     }
 
     /**
@@ -1021,14 +822,9 @@ public class JnaRMathTest {
     @Test
     public void testDpois() {
         System.out.println("dpois");
-        double x = 0.0;
-        double lambda = 0.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dpois(x, lambda, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.dpois(1.0, 2.0, log);
+        assertEquals(0.2706706, result, 1e-7);
     }
 
     /**
@@ -1037,15 +833,10 @@ public class JnaRMathTest {
     @Test
     public void testPpois() {
         System.out.println("ppois");
-        double q = 0.0;
-        double lambda = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.ppois(q, lambda, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.ppois(1.0, 2.0, lower_tail, log_p);
+        assertEquals(0.4060058, result, 1e-7);
     }
 
     /**
@@ -1054,15 +845,10 @@ public class JnaRMathTest {
     @Test
     public void testQpois() {
         System.out.println("qpois");
-        double p = 0.0;
-        double lambda = 0.0;
-        int lower_tail = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qpois(p, lambda, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.qpois(0.7, 4.0, lower_tail, log_p);
+        assertEquals(5.0, result, 1e-12);
     }
 
     /**
@@ -1071,501 +857,212 @@ public class JnaRMathTest {
     @Test
     public void testRpois() {
         System.out.println("rpois");
-        double lambda = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rpois(lambda);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.rpois(2.0);
+        assertTrue(result >= 0.0 && result <= Double.MAX_VALUE);
+        assertTrue(Math.abs(Math.floor(result) - result) < 1E-12);
     }
 
     /**
      * Test of dweibull method, of class JnaRMath.
      */
     @Test
-    public void testDweibull() {
+    public void testWeibull() {
+        double x = 1.0;
+        double q = 1.0;
+        double p = 0.5;
+        double shape = 2.0;
+        double scale = 3.0;
+        int log = 0;
+        int lower_tail = 1;
+        int log_p = 0;
         System.out.println("dweibull");
-        double x = 0.0;
-        double shape = 0.0;
-        double scale = 0.0;
-        int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dweibull(x, shape, scale, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of pweibull method, of class JnaRMath.
-     */
-    @Test
-    public void testPweibull() {
+        double result = JnaRMath.dweibull(x, shape, scale, log);
+        assertEquals(0.1988532, result, 1E-7);
         System.out.println("pweibull");
-        double q = 0.0;
-        double shape = 0.0;
-        double scale = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pweibull(q, shape, scale, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of qweibull method, of class JnaRMath.
-     */
-    @Test
-    public void testQweibull() {
+        result = JnaRMath.pweibull(q, shape, scale, lower_tail, log_p);
+        assertEquals(0.1051607, result, 1E-7);
         System.out.println("qweibull");
-        double p = 0.0;
-        double shape = 0.0;
-        double scale = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qweibull(p, shape, scale, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of rweibull method, of class JnaRMath.
-     */
-    @Test
-    public void testRweibull() {
+        result = JnaRMath.qweibull(p, shape, scale, lower_tail, log_p);
+        assertEquals(2.497664, result, 1E-6);
         System.out.println("rweibull");
-        double shape = 0.0;
-        double scale = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rweibull(shape, scale);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        result = JnaRMath.rweibull(shape, scale);
+        assertTrue(result > 0.0 && result < Double.MAX_VALUE);
     }
 
     /**
-     * Test of dlogis method, of class JnaRMath.
+     * Test of logis methods, of class JnaRMath.
      */
     @Test
-    public void testDlogis() {
+    public void testLogis() {
+        double x = 1.0;
+        double q = 1.0;
+        double p = 0.7;
+        double location = 1.0;
+        double scale = 2.0;
+        int log = 0;
+        int lower_tail = 1;
+        int log_p = 0;
         System.out.println("dlogis");
-        double x = 0.0;
-        double location = 0.0;
-        double scale = 0.0;
-        int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dlogis(x, location, scale, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of plogis method, of class JnaRMath.
-     */
-    @Test
-    public void testPlogis() {
+        double result = JnaRMath.dlogis(x, location, scale, log);
+        assertEquals(0.125, result, 1E-12);
         System.out.println("plogis");
-        double q = 0.0;
-        double location = 0.0;
-        double scale = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.plogis(q, location, scale, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of qlogis method, of class JnaRMath.
-     */
-    @Test
-    public void testQlogis() {
+        result = JnaRMath.plogis(q, location, scale, lower_tail, log_p);
+        assertEquals(0.5, result, 1E-12);
         System.out.println("qlogis");
-        double p = 0.0;
-        double location = 0.0;
-        double scale = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qlogis(p, location, scale, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of rlogis method, of class JnaRMath.
-     */
-    @Test
-    public void testRlogis() {
+        result = JnaRMath.qlogis(p, location, scale, lower_tail, log_p);
+        assertEquals(2.694596, result, 1E-6);
         System.out.println("rlogis");
-        double location = 0.0;
-        double scale = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rlogis(location, scale);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        result = JnaRMath.rlogis(location, scale);
+        assertTrue(result > Double.NEGATIVE_INFINITY && result < Double.POSITIVE_INFINITY);
     }
 
     /**
-     * Test of dnbeta method, of class JnaRMath.
+     * Test of nbeta methods, of class JnaRMath.
      */
     @Test
-    public void testDnbeta() {
+    public void testNbeta() {
+        double x = 0.2;
+        double p = 0.7;
+        double q = 0.2;
+        double shape1 = 2.0;
+        double shape2 = 3.0;
+        double ncp = 1.0;
+        int log = 0;
+        int lower_tail = 1;
+        int log_p = 0;
         System.out.println("dnbeta");
-        double x = 0.0;
-        double shape1 = 0.0;
-        double shape2 = 0.0;
-        double ncp = 0.0;
-        int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dnbeta(x, shape1, shape2, ncp, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of pnbeta method, of class JnaRMath.
-     */
-    @Test
-    public void testPnbeta() {
+        double result = JnaRMath.dnbeta(x, shape1, shape2, ncp, log);
+        assertEquals(1.189244, result, 1e-6);
         System.out.println("pnbeta");
-        double p = 0.0;
-        double shape1 = 0.0;
-        double shape2 = 0.0;
-        double ncp = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pnbeta(p, shape1, shape2, ncp, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of qnbeta method, of class JnaRMath.
-     */
-    @Test
-    public void testQnbeta() {
+        result = JnaRMath.pnbeta(q, shape1, shape2, ncp, lower_tail, log_p);
+        assertEquals(0.1285727, result, 1E-7);
         System.out.println("qnbeta");
-        double q = 0.0;
-        double shape1 = 0.0;
-        double shape2 = 0.0;
-        double ncp = 0.0;
-        int lower_tail = 0;
+        result = JnaRMath.qnbeta(p, shape1, shape2, ncp, lower_tail, log_p);
+        assertEquals(0.5645086, result, 1e-7);
+    }
+
+    /**
+     * Test of nf methods, of class JnaRMath.
+     */
+    @Test
+    public void testNf() {
+        double x = 1.0;
+        double p = 0.6;
+        double q = 1.0;
+        double df1 = 2.0;
+        double df2 = 3.0;
+        double ncp = 1.0;
+        int log = 0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qnbeta(q, shape1, shape2, ncp, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of rnbeta method, of class JnaRMath.
-     */
-    @Test
-    public void testRnbeta() {
-        System.out.println("rnbeta");
-        double shape1 = 0.0;
-        double shape2 = 0.0;
-        double ncp = 0.0;
-        double expResult = 0.0;
-        
-        //TODO:  not found in RMath
-        //// double result = JnaRMath.rnbeta(shape1, shape2, ncp);
-        //// assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of dnf method, of class JnaRMath.
-     */
-    @Test
-    public void testDnf() {
         System.out.println("dnf");
-        double x = 0.0;
-        double df1 = 0.0;
-        double df2 = 0.0;
-        double ncp = 0.0;
-        int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dnf(x, df1, df2, ncp, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of pnf method, of class JnaRMath.
-     */
-    @Test
-    public void testPnf() {
+        double result = JnaRMath.dnf(x, df1, df2, ncp, log);
+        assertEquals(0.2700874, result, 1e-7);
         System.out.println("pnf");
-        double p = 0.0;
-        double df1 = 0.0;
-        double df2 = 0.0;
-        double ncp = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pnf(p, df1, df2, ncp, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of qnf method, of class JnaRMath.
-     */
-    @Test
-    public void testQnf() {
+        result = JnaRMath.pnf(q, df1, df2, ncp, lower_tail, log_p);
+        assertEquals(0.4119545, result, 1e-7);
         System.out.println("qnf");
-        double q = 0.0;
-        double df1 = 0.0;
-        double df2 = 0.0;
-        double ncp = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qnf(q, df1, df2, ncp, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        result = JnaRMath.qnf(p, df1, df2, ncp, lower_tail, log_p);
+        assertEquals(1.947079, result, 1e-6);
     }
-
-    /**
-     * Test of dnt method, of class JnaRMath.
-     */
-    @Test
-    public void testDnt() {
-        System.out.println("dnt");
-        double x = 0.0;
-        double df = 0.0;
-        double ncp = 0.0;
-        int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dnt(x, df, ncp, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of pnt method, of class JnaRMath.
-     */
-    @Test
-    public void testPnt() {
-        System.out.println("pnt");
-        double q = 0.0;
-        double df = 0.0;
-        double ncp = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pnt(q, df, ncp, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+    
     /**
      * Test of qnt method, of class JnaRMath.
      */
     @Test
-    public void testQnt() {
+    public void testNt() {
+        double x = 1.0;
+        double p = 0.6;
+        double q = 1.0;
+        double df = 2.0;
+        double ncp = 1.0;
+        int log = 0;
+        int lower_tail = 1;
+        int log_p = 0;
+        System.out.println("dnt");
+        double result = JnaRMath.dnt(x, df, ncp, log);
+        assertEquals(0.3178518, result, 1e-7);
+        System.out.println("pnt");
+        result = JnaRMath.pnt(q, df, ncp, lower_tail, log_p);
+        assertEquals(0.4557458, result, 1e-7);
         System.out.println("qnt");
-        double p = 0.0;
-        double df = 0.0;
-        double ncp = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qnt(p, df, ncp, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        result = JnaRMath.qnt(p, df, ncp, lower_tail, log_p);
+        assertEquals(1.502078, result, 1e-6);
     }
 
     /**
-     * Test of ptukey method, of class JnaRMath.
+     * Test of tukey methods, of class JnaRMath.
      */
     @Test
-    public void testPtukey() {
+    public void testTukey() {
         System.out.println("ptukey");
-        double q = 0.0;
-        double nranges = 0.0;
-        double nmeans = 0.0;
-        double df = 0.0;
-        int lower_tail = 0;
+        double q = 1.0;
+        double nranges = 2.0;
+        double nmeans = 3.0;
+        double df = 4.0;
+        int lower_tail = 1;
         int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.ptukey(q, nranges, nmeans, df, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of qtukey method, of class JnaRMath.
-     */
-    @Test
-    public void testQtukey() {
+        double result = JnaRMath.ptukey(q, nranges, nmeans, df, lower_tail, log_p);
+        assertEquals(0.06951396, result, 1E-7);
         System.out.println("qtukey");
-        double p = 0.0;
-        double nranges = 0.0;
-        double nmeans = 0.0;
-        double df = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qtukey(p, nranges, nmeans, df, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double p = 0.6;
+        result = JnaRMath.qtukey(p, nranges, nmeans, df, lower_tail, log_p);
+        assertEquals(2.659781, result, 1E-6);
     }
 
     /**
-     * Test of dwilcox method, of class JnaRMath.
+     * Test of wilcox methods, of class JnaRMath.
      */
     @Test
     public void testDwilcox() {
+        double x = 3.0;
+        double q = 10.0;
+        double p = 0.5;
+        double m = 5.0;
+        double n = 8.0;
+        int log = 0;
+        int lower_tail = 1;
+        int log_p = 0;
         System.out.println("dwilcox");
-        double x = 0.0;
-        double m = 0.0;
-        double n = 0.0;
-        int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dwilcox(x, m, n, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of pwilcox method, of class JnaRMath.
-     */
-    @Test
-    public void testPwilcox() {
+        double result = JnaRMath.dwilcox(x, m, n, log);
+        assertEquals(0.002331002, result, 1E-8);
         System.out.println("pwilcox");
-        double q = 0.0;
-        double m = 0.0;
-        double n = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.pwilcox(q, m, n, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of qwilcox method, of class JnaRMath.
-     */
-    @Test
-    public void testQwilcox() {
+        result = JnaRMath.pwilcox(q, m, n, lower_tail, log_p);
+        assertEquals(0.08547009, result, 1E-7);
         System.out.println("qwilcox");
-        double p = 0.0;
-        double m = 0.0;
-        double n = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qwilcox(p, m, n, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of rwilcox method, of class JnaRMath.
-     */
-    @Test
-    public void testRwilcox() {
+        result = JnaRMath.qwilcox(p, m, n, lower_tail, log_p);
+        assertEquals(20.0, result, 1E-12);
         System.out.println("rwilcox");
-        double m = 0.0;
-        double n = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rwilcox(m, n);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        result = JnaRMath.rwilcox(m, n);
+        assertTrue(result > 0 && result < Double.MAX_VALUE);
+        assertTrue(Math.abs(Math.floor(result) - result) < 1E-12);
     }
 
     /**
-     * Test of dsignrank method, of class JnaRMath.
+     * Test of signrank methods, of class JnaRMath.
      */
     @Test
-    public void testDsignrank() {
+    public void testSignrank() {
         System.out.println("dsignrank");
-        double x = 0.0;
-        double n = 0.0;
+        double x = 12.0;
+        double q = 12.0;
+        double p = 0.6;
+        double n = 10.0;
         int log = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.dsignrank(x, n, log);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of psignrank method, of class JnaRMath.
-     */
-    @Test
-    public void testPsignrank() {
+        int lower_tail = 1;
+        int log_p = 0;
+        double result = JnaRMath.dsignrank(x, n, log);
+        assertEquals(0.01269531, result, 1E-7);
         System.out.println("psignrank");
-        double q = 0.0;
-        double n = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.psignrank(q, n, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of qsignrank method, of class JnaRMath.
-     */
-    @Test
-    public void testQsignrank() {
+        result = JnaRMath.psignrank(q, n, lower_tail, log_p);
+        assertEquals(0.06542969, result, 1E-8);
         System.out.println("qsignrank");
-        double p = 0.0;
-        double n = 0.0;
-        int lower_tail = 0;
-        int log_p = 0;
-        double expResult = 0.0;
-        // double result = JnaRMath.qsignrank(p, n, lower_tail, log_p);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of rsignrank method, of class JnaRMath.
-     */
-    @Test
-    public void testRsignrank() {
+        result = JnaRMath.qsignrank(p, n, lower_tail, log_p);
+        assertEquals(30.0, result, 1E-12);
         System.out.println("rsignrank");
-        double n = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.rsignrank(n);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        result = JnaRMath.rsignrank(n);
+        assertTrue(result >= 0 && result < Double.MAX_VALUE);
+        assertTrue(Math.abs(Math.floor(result) - result) < 1E-12);
     }
 
     /**
@@ -1574,12 +1071,8 @@ public class JnaRMathTest {
     @Test
     public void testGammafn() {
         System.out.println("gammafn");
-        double x = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.gammafn(x);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.gammafn(2.1);
+        assertEquals(1.046486, result, 1e-6);
     }
 
     /**
@@ -1588,12 +1081,8 @@ public class JnaRMathTest {
     @Test
     public void testLgammafn() {
         System.out.println("lgammafn");
-        double x = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.lgammafn(x);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.lgammafn(5.0);
+        assertEquals(3.178054, result, 1e-6);
     }
 
     /**
@@ -1602,13 +1091,8 @@ public class JnaRMathTest {
     @Test
     public void testPsigamma() {
         System.out.println("psigamma");
-        double x = 0.0;
-        double deriv = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.psigamma(x, deriv);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.psigamma(4.0, 2.0);
+        assertEquals(-0.08003973, result, 1E-7);
     }
 
     /**
@@ -1617,12 +1101,8 @@ public class JnaRMathTest {
     @Test
     public void testDigamma() {
         System.out.println("digamma");
-        double x = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.digamma(x);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.digamma(3.0);
+        assertEquals(0.9227843, result, 1E-7);
     }
 
     /**
@@ -1631,12 +1111,8 @@ public class JnaRMathTest {
     @Test
     public void testTrigamma() {
         System.out.println("trigamma");
-        double x = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.trigamma(x);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.trigamma(3.0);
+        assertEquals(0.3949341, result, 1E-7);
     }
 
     /**
@@ -1645,13 +1121,8 @@ public class JnaRMathTest {
     @Test
     public void testBeta() {
         System.out.println("beta");
-        double a = 0.0;
-        double b = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.beta(a, b);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.beta(2.0, 3.0);
+        assertEquals(0.08333333, result, 1e-7);
     }
 
     /**
@@ -1660,13 +1131,8 @@ public class JnaRMathTest {
     @Test
     public void testLbeta() {
         System.out.println("lbeta");
-        double a = 0.0;
-        double b = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.lbeta(a, b);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.lbeta(2.0, 3.0);
+        assertEquals(-2.484907, result, 1E-6);
     }
 
     /**
@@ -1675,13 +1141,8 @@ public class JnaRMathTest {
     @Test
     public void testChoose() {
         System.out.println("choose");
-        double n = 0.0;
-        double k = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.choose(n, k);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.choose(5.0, 2.0);
+        assertEquals(10.0, result, 1E-12);
     }
 
     /**
@@ -1690,13 +1151,8 @@ public class JnaRMathTest {
     @Test
     public void testLchoose() {
         System.out.println("lchoose");
-        double n = 0.0;
-        double k = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.lchoose(n, k);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.lchoose(5, 2);
+        assertEquals(2.302585, result, 1e-6);
     }
 
     /**
@@ -1705,14 +1161,8 @@ public class JnaRMathTest {
     @Test
     public void testBessel_i() {
         System.out.println("bessel_i");
-        double x = 0.0;
-        double nu = 0.0;
-        double expon_scaled = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.bessel_i(x, nu, expon_scaled);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.bessel_i(2.0, 3.0, 1);
+        assertEquals(0.21274, result, 1E-5);
     }
 
     /**
@@ -1721,13 +1171,8 @@ public class JnaRMathTest {
     @Test
     public void testBessel_j() {
         System.out.println("bessel_j");
-        double x = 0.0;
-        double nu = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.bessel_j(x, nu);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.bessel_j(2.0, 3.0);
+        assertEquals(0.1289432, result, 1E-6);
     }
 
     /**
@@ -1736,14 +1181,8 @@ public class JnaRMathTest {
     @Test
     public void testBessel_k() {
         System.out.println("bessel_k");
-        double x = 0.0;
-        double nu = 0.0;
-        double expon_scaled = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.bessel_k(x, nu, expon_scaled);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.bessel_k(2.0, 3.0, 1);
+        assertEquals(0.6473854, result, 1E-7);
     }
 
     /**
@@ -1752,12 +1191,7 @@ public class JnaRMathTest {
     @Test
     public void testBessel_y() {
         System.out.println("bessel_y");
-        double x = 0.0;
-        double nu = 0.0;
-        double expResult = 0.0;
-        // double result = JnaRMath.bessel_y(x, nu);
-        // assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = JnaRMath.bessel_y(2.0, 3.0);
+        assertEquals(-1.127784, result, 1E-6);
     }
 }

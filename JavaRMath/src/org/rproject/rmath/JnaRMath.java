@@ -19,7 +19,6 @@
 package org.rproject.rmath;
 
 import com.sun.jna.Native;
-import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
 /**
@@ -30,8 +29,13 @@ import com.sun.jna.ptr.IntByReference;
  * @author carnellr
  */
 public class JnaRMath {
+    
     /* Normal Distribution */
     
+    private static native double dnorm4(double x, double mean, double std, int log);
+    private static native double pnorm5(double q, double mean, double std, int lower_tail, int log_p);
+    private static native double qnorm5(double p, double mean, double std, int lower_tail, int log_p);
+
     /**
      * Normal Distribution pdf
      * @param x
@@ -40,7 +44,11 @@ public class JnaRMath {
      * @param log if true, probabilities are returned on a log scale
      * @return probability density
      */
-    public static native double dnorm4(double x, double mean, double std, int log);
+    public static double dnorm(double x, double mean, double std, int log)
+    {
+        return dnorm4(x, mean, std, log);
+    };
+
     /**
      * Normal Distribution cdf
      * @param q quantile
@@ -50,7 +58,11 @@ public class JnaRMath {
      * @param log_p if true, probabilities are returned on a log scale
      * @return probability
      */
-    public static native double pnorm5(double q, double mean, double std, int lower_tail, int log_p);
+    public static double pnorm(double q, double mean, double std, int lower_tail, int log_p)
+    {
+        return pnorm5(q, mean, std, lower_tail, log_p);
+    }
+    
     /**
      * Normal Distribution inverse cdf
      * @param p probability
@@ -60,7 +72,11 @@ public class JnaRMath {
      * @param log_p if true, probabilities are input on a log scale
      * @return distribution quantile
      */
-    public static native double qnorm5(double p, double mean, double std, int lower_tail, int log_p);
+    public static double qnorm(double p, double mean, double std, int lower_tail, int log_p)
+    {
+        return qnorm5(p, mean, std, lower_tail, log_p);
+    }
+    
     /**
      * Normal Distribution sample
      * @param mean mean
@@ -68,6 +84,7 @@ public class JnaRMath {
      * @return random sample
      */
     public static native double rnorm(double mean, double std);
+    
     /* Lognormal Distribution */
     /**
      * LogNormal Distribution pdf
@@ -766,7 +783,7 @@ public class JnaRMath {
     public static native double dnbeta(double x, double shape1, double shape2, double ncp, int log);
     /**
      * Non-central Beta Distribution cdf
-     * @param p probability
+     * @param q quantile
      * @param shape1
      * @param shape2
      * @param ncp non-centrality parameter
@@ -774,10 +791,10 @@ public class JnaRMath {
      * @param log_p if true, probabilities are returned on a log scale
      * @return probability
      */
-    public static native double pnbeta(double p, double shape1, double shape2, double ncp, int lower_tail, int log_p);
+    public static native double pnbeta(double q, double shape1, double shape2, double ncp, int lower_tail, int log_p);
     /**
      * Non-central Beta Distribution inverse cdf
-     * @param q quantile
+     * @param p probability
      * @param shape1
      * @param shape2
      * @param ncp non-centrality parameter
@@ -785,7 +802,7 @@ public class JnaRMath {
      * @param log_p if true, probabilities are input on a log scale
      * @return quantile
      */
-    public static native double qnbeta(double q, double shape1, double shape2, double ncp, int lower_tail, int log_p);
+    public static native double qnbeta(double p, double shape1, double shape2, double ncp, int lower_tail, int log_p);
     /**
      * Non-central Beta Distribution sample
      * @param shape1
@@ -811,7 +828,7 @@ public class JnaRMath {
     public static native double dnf(double x, double df1, double df2, double ncp, int log);
     /**
      * Non-central F Distribution cdf
-     * @param p probability
+     * @param q quantile
      * @param df1 degrees of freedom
      * @param df2 degrees of freedom
      * @param ncp non-centrality parameter
@@ -819,10 +836,10 @@ public class JnaRMath {
      * @param log_p if true, probabilities are returned on a log scale
      * @return probability
      */
-    public static native double pnf(double p, double df1, double df2, double ncp, int lower_tail, int log_p);
+    public static native double pnf(double q, double df1, double df2, double ncp, int lower_tail, int log_p);
     /**
      * Non-central F Distribution inverse cdf
-     * @param q quantile
+     * @param p probability
      * @param df1 degrees of freedom
      * @param df2 degrees of freedom
      * @param ncp non-centrality parameter
@@ -830,7 +847,7 @@ public class JnaRMath {
      * @param log_p if true, probabilities are input on a log scale
      * @return quantile
      */
-    public static native double qnf(double q, double df1, double df2, double ncp, int lower_tail, int log_p);
+    public static native double qnf(double p, double df1, double df2, double ncp, int lower_tail, int log_p);
     /* Non-central Student t Distribution */
     /**
      * Non-central Student t Distribution pdf
