@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=MinGW-Windows
-CND_ARTIFACT_DIR_Debug=dist/Debug/MinGW-Windows
+CND_PLATFORM_Debug=RTools-Windows
+CND_ARTIFACT_DIR_Debug=dist/Debug/RTools-Windows
 CND_ARTIFACT_NAME_Debug=libJavaRMathLibrary.dll
-CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/libJavaRMathLibrary.dll
-CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
+CND_ARTIFACT_PATH_Debug=dist/Debug/RTools-Windows/libJavaRMathLibrary.dll
+CND_PACKAGE_DIR_Debug=dist/Debug/RTools-Windows/package
 CND_PACKAGE_NAME_Debug=libJavaRMathLibrary.dll.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/libJavaRMathLibrary.dll.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/RTools-Windows/package/libJavaRMathLibrary.dll.tar
 # Release configuration
-CND_PLATFORM_Release=MinGW-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
+CND_PLATFORM_Release=RTools-Windows
+CND_ARTIFACT_DIR_Release=dist/Release/RTools-Windows
 CND_ARTIFACT_NAME_Release=libJavaRMathLibrary.dll
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/libJavaRMathLibrary.dll
-CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
+CND_ARTIFACT_PATH_Release=dist/Release/RTools-Windows/libJavaRMathLibrary.dll
+CND_PACKAGE_DIR_Release=dist/Release/RTools-Windows/package
 CND_PACKAGE_NAME_Release=libJavaRMathLibrary.dll.tar
-CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/libJavaRMathLibrary.dll.tar
+CND_PACKAGE_PATH_Release=dist/Release/RTools-Windows/package/libJavaRMathLibrary.dll.tar
 #
 # include compiler specific variables
 #
