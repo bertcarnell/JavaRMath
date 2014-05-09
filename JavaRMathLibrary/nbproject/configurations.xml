@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/bessel.h</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dpq.h</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/nmath.h</itemPath>
+      <itemPath>../JavaRMath/jni/org_rproject_rmath_JniRMath.h</itemPath>
+      <itemPath>../JavaRMath/jni/org_rproject_rmath_macros.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/bd0.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/bessel_i.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/bessel_j.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/bessel_k.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/bessel_y.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/beta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/chebyshev.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/choose.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/d1mach.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dbeta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dbinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dcauchy.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dchisq.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dexp.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/df.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dgamma.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dgeom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dhyper.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dlnorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dlogis.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dnbeta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dnbinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dnchisq.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dnf.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dnorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dnt.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dpois.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dt.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dunif.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/dweibull.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/expm1.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/fmax2.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/fmin2.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/fprec.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/fround.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/fsign.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/ftrunc.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/gamma.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/gamma_cody.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/gammalims.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/i1mach.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/imax2.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/imin2.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/lbeta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/lgamma.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/lgammacor.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/log1p.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/mlutils.c</itemPath>
+      <itemPath>../JavaRMath/jni/org_rproject_rmath_JniRMath.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pbeta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pbinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pcauchy.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pchisq.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pexp.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pf.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pgamma.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pgeom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/phyper.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/plnorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/plogis.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pnbeta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pnbinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pnchisq.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pnf.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pnorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pnt.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/polygamma.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/ppois.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pt.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/ptukey.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/punif.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/pweibull.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qbeta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qbinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qcauchy.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qchisq.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qexp.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qf.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qgamma.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qgeom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qhyper.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qlnorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qlogis.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qnbeta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qnbinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qnchisq.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qnf.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qnorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qnt.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qpois.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qt.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qtukey.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qunif.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/qweibull.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rbeta.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rbinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rcauchy.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rchisq.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rexp.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rf.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rgamma.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rgeom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rhyper.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rlnorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rlogis.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rmultinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rnbinom.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rnchisq.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rnorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rpois.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rt.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/runif.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/rweibull.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/sexp.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/sign.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/signrank.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/snorm.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/stirlerr.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/standalone/sunif.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/toms708.c</itemPath>
+      <itemPath>../../Rdevel/R-2.15.0/src/nmath/wilcox.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>../../../../../../Program Files/Java/jdk1.7.0_02/include</pElem>
+            <pElem>../../../../../../Program Files/Java/jdk1.7.0_02/include/win32</pElem>
+            <pElem>../../Rdevel/R-2.15.0/src/include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>MATHLIB_STANDALONE</Elem>
+          </preprocessorList>
+          <warningLevel>2</warningLevel>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../../../../../../Program Files/Java/jdk1.7.0_02/include</pElem>
+            <pElem>../../../../../../Program Files/Java/jdk1.7.0_02/include/win32</pElem>
+            <pElem>../../Rdevel/R-2.15.0/src/include</pElem>
+          </incDir>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>
